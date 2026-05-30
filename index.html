@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Conrado | Portfólio Dev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Lucas<span>Conrado.Dev</span></div>
+        <button id="btn-menu" style="background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; display: none;"><i class="fa-solid fa-bars"></i></button>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#skills">Habilidades</a>
+            <a href="#vitrine">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section id="home" class="section-hero">
+        <div class="container hero-content">
+            <p class="hero-subtitle">Olá, eu sou o</p>
+            <h1 class="hero-title">Lucas Conrado</h1>
+            <h2 class="hero-role">Desenvolvedor Front-End Junior | Web Developer</h2>
+            <p class="hero-description">Estudante de Análise e Desenvolvimento de Sistemas focado na criação de interfaces modernas, intuitivas e totalmente responsivas.</p>
+            <div class="hero-buttons">
+                <a href="#vitrine" class="btn-primary">Ver Projetos</a>
+                <a href="#contato" class="btn-secondary">Solicitar Orçamento</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="section-sobre">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <p class="sobre-p">
+                Desenvolvedor Web Front-End em formação, focado na criação de interfaces modernas, intuitivas e totalmente responsivas. 
+                Atualmente curso Análise e Desenvolvimento de Sistemas pela Estácio, aplicando conceitos teóricos diretamente em projetos reais.
+            </p>
+            <p class="sobre-p">
+                Estou em busca de uma oportunidade como Estagiário ou Desenvolvedor Front-End Junior para somar com a produtividade da equipe, 
+                solucionar problemas com código limpo e otimizar a experiência do usuário.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills" class="section-skills">
+        <div class="container">
+            <h2>Habilidades Técnicas</h2>
+            <div class="grid-skills">
+                <div class="card-skill"><i class="fa-brands fa-html5 text-laranja"></i> <div><strong>HTML5</strong><p>Estruturação Semântica</p></div></div>
+                <div class="card-skill"><i class="fa-brands fa-css3-alt text-foco"></i> <div><strong>CSS3</strong><p>Flexbox, Grid & Responsividade</p></div></div>
+                <div class="card-skill"><i class="fa-brands fa-js text-laranja"></i> <div><strong>JavaScript</strong><p>Interatividade & APIs</p></div></div>
+                <div class="card-skill"><i class="fa-solid fa-database text-roxo"></i> <div><strong>SQL</strong><p>Manipulação de Dados</p></div></div>
+                <div class="card-skill"><i class="fa-brands fa-windows text-foco"></i> <div><strong>Windows Support</strong><p>Suporte Técnico & Infraestrutura</p></div></div>
+                <div class="card-skill"><i class="fa-solid fa-headset text-verde"></i> <div><strong>Help Desk</strong><p>Suporte Tier 1</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vitrine" class="section-vitrine">
+        <div class="container">
+            <h2>Minha Vitrine</h2>
+            <div class="grid-projetos">
+                <div class="card-projeto">
+                    <div class="img-placeholder">
+                        <i class="fa-solid fa-code-laptop"></i>
+                    </div>
+                    <h3>Projeto 01</h3>
+                    <p>Interface responsiva desenvolvida com foco em alta performance, estruturação semântica e design moderno.</p>
+                    <a href="#" class="btn-projeto">Acessar Projeto <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <div class="card-projeto">
+                    <div class="img-placeholder">
+                        <i class="fa-solid fa-code-laptop"></i>
+                    </div>
+                    <h3>Projeto 02</h3>
+                    <p>Aplicação web utilizando manipulação de DOM e consumo de APIs assíncronas com JavaScript puro.</p>
+                    <a href="#" class="btn-projeto">Acessar Projeto <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="section-contato">
+        <div class="container grid-contato">
+            <div class="info-contato">
+                <h2>Vamos Conversar?</h2>
+                <p>Se você tem um projeto em mente, quer fechar um serviço ou discutir uma oportunidade de vaga, escolha um canal abaixo:</p>
+                <div class="links-contato-cards">
+                    <a href="https://wa.me/5521995724534" target="_blank" class="card-link wpp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                    <a href="mailto:lucascconrado@gmail.com" class="card-link email"><i class="fa-solid fa-envelope"></i> lucascconrado@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/lucascconrado/" target="_blank" class="card-link linkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/lucascconrado" target="_blank" class="card-link github"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="https://www.instagram.com/lucascconrado" target="_blank" class="card-link instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+
+            <div class="form-pedido">
+                <h3><i class="fa-solid fa-file-invoice-dollar text-verde"></i> Enviar Pedido Direto</h3>
+                <form id="form-orcamento">
+                    <div class="form-group">
+                        <label for="nome">Seu Nome / Empresa</label>
+                        <input type="text" id="nome" required placeholder="Ex: João Silva">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail para Retorno</label>
+                        <input type="email" id="email" required placeholder="exemplo@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="detalhes">Descrição do Site ou Serviço</label>
+                        <textarea id="detalhes" rows="5" required placeholder="Descreva brevemente o que você precisa no site..."></textarea>
+                        <span id="contador" style="font-size: 0.8rem; color: var(--texto-mutado);">300 caracteres restantes</span>
+                    </div>
+                    <button type="submit" class="btn-enviar">Enviar Solicitação <i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
