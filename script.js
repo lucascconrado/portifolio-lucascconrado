@@ -1,54 +1,3 @@
-// Seleciona o elemento onde o texto vai aparecer
-const elementoTexto = document.querySelector('.hero-role');
-const textosParaDigitar = ["Desenvolvedor Front-End Junior", "Web Developer", "Estudante de ADS"];
-let indexTexto = 0;
-let indexLetra = 0;
-
-function digitar() {
-    if (indexLetra < textosParaDigitar[indexTexto].length) {
-        elementoTexto.innerHTML = textosParaDigitar[indexTexto].substring(0, indexLetra + 1) + '<span class="cursor">|</span>';
-        indexLetra++;
-        setTimeout(digitar, 100); // Velocidade da digitação (em milissegundos)
-    } else {
-        setTimeout(apagar, 2000); // Tempo que o texto fica visível antes de apagar
-    }
-}
-
-function apagar() {
-    if (indexLetra > 0) {
-        elementoTexto.innerHTML = textosParaDigitar[indexTexto].substring(0, indexLetra - 1) + '<span class="cursor">|</span>';
-        indexLetra--;
-        setTimeout(apagar, 50); // Velocidade ao apagar
-    } else {
-        indexTexto = (indexTexto + 1) % textosParaDigitar.length; // Passa para o próximo texto
-        setTimeout(digitar, 500);
-    }
-}
-
-// Inicia o efeito assim que a página carrega
-document.addEventListener("DOMContentLoaded", digitar);
-
-const campoTexto = document.getElementById('detalhes');
-const contador = document.getElementById('contador');
-const limiteMaximo = 300;
-
-campoTexto.addEventListener('input', function() {
-    const caracteresRestantes = limiteMaximo - campoTexto.value.length;
-    contador.textContent = `${caracteresRestantes} caracteres restantes`;
-
-    if (caracteresRestantes < 50) {
-        contador.style.color = "var(--cor-laranja)"; // Alerta que está acabando o espaço
-    } else {
-        contador.style.color = "var(--texto-mutado)";
-    }
-});
-const btnMenu = document.getElementById('btn-menu');
-const menuNav = document.querySelector('.navbar nav');
-
-btnMenu.addEventListener('click', function() {
-    menuNav.classList.toggle('ativo'); // Liga e desliga a classe "ativo" no HTML
-});
-
 // ================= 1. EFEITO DIGITAÇÃO (TYPEWRITER) =================
 const elementoTexto = document.querySelector('.hero-role');
 const textosParaDigitar = ["Desenvolvedor Front-End Junior", "Web Developer", "Estudante de ADS"];
@@ -105,7 +54,7 @@ btnMenu.addEventListener('click', function() {
 });
 
 
-// ================= 4. ENVIO DO FORMULÁRIO (FETCH API) =================
+// ================= 4. ENVIO DO FORMULÁRIO (WEB3FORMS - ATUALIZADO) =================
 const formulario = document.getElementById('form-orcamento');
 
 formulario.addEventListener('submit', function(evento) {
@@ -116,29 +65,38 @@ formulario.addEventListener('submit', function(evento) {
     botao.innerHTML = 'Enviando... <i class="fa-solid fa-spinner fa-spin"></i>';
     botao.disabled = true;
 
+    // 1. Cria o objeto de dados capturando o formulário do HTML
     const dados = new FormData(formulario);
 
-    // Cole o link do seu Formspree aqui dentro das aspas abaixo:
-    const urlFormspree = "https://formspree.io/f/seu_id_aqui"; 
+    // 2. Aqui injetamos a sua chave real do Web3Forms que veio do site
+    dados.append("access_key", "baeecfe6-dee0-43b4-b7b6-2a60bf9074ba");
 
-    fetch(urlFormspree, {
+    // O link de envio do Web3Forms é único e fixo
+    const urlWeb3Forms = "https://api.web3forms.com/submit"; 
+
+    // 3. Faz o disparo para o servidor do Web3Forms em segundo plano
+    fetch(urlWeb3Forms, {
         method: 'POST',
-        body: dados,
-        headers: { 'Accept': 'application/json' }
+        body: dados
     })
-    .then(resposta => {
-        if (resposta.ok) {
+    .then(resposta => resposta.json()) // Converte a resposta do servidor para JSON
+    .then(resultado => {
+        if (resultado.success) {
+            // Se o envio deu certo no Web3Forms:
             alert('Solicitação enviada com sucesso! Entrarei em contato em breve.');
             formulario.reset();
             contador.textContent = `${limiteMaximo} caracteres restantes`;
+            contador.style.color = "var(--texto-mutado)";
         } else {
-            alert('Ops! Algo deu errado no servidor. Tente novamente.');
+            // Se houver algum erro de validação deles
+            alert('Erro no envio: ' + resultado.message);
         }
     })
     .catch(() => {
         alert('Erro de rede. Verifique sua conexão.');
     })
     .finally(() => {
+        // Devolve o botão ao estado original independente de sucesso ou erro
         botao.innerHTML = textoOriginal;
         botao.disabled = false;
     });

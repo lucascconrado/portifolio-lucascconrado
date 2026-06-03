@@ -160,7 +160,9 @@ body {
 }
 
 .btn-secondary:hover {
-    background-color: rgba(157, 78, 221, 0.1);
+    background-color: rgba(157, 78, 221, 0.102);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(170, 87, 238, 0.418) ;
 }
 
 /* Títulos Globais de Seção */
@@ -393,7 +395,7 @@ section h2::after {
     background-color: #04b84b;
 }
 
-/* ================= RESPONSIVO (CORRIGIDO) ================= */
+/* ================= RESPONSIVO ================= */
 @media (max-width: 768px) {
     #btn-menu { 
         display: block !important; 
@@ -411,7 +413,6 @@ section h2::after {
         border-bottom: 1px solid rgba(157, 78, 221, 0.2);
     }
     
-    /* Classe injetada pelo JS para abrir o menu */
     .navbar nav.ativo { 
         display: flex; 
     } 
