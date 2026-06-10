@@ -425,3 +425,162 @@ section h2::after {
         font-size: 1.4rem; 
     }
 }
+
+/* ================= SEÇÃO CERTIFICADOS ================= */
+.grid-certificados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card-certificado {
+    background-color: var(--bg-secundario);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.card-certificado:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-roxo); /* Diferenciando das habilidades usando o roxo */
+    box-shadow: 0 10px 30px rgba(157, 78, 221, 0.1);
+}
+
+.icon-certificado i {
+    font-size: 1.8rem;
+    margin-top: 2px;
+}
+
+.info-certificado h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--texto-claro);
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.info-certificado .instituicao {
+    font-size: 0.85rem;
+    color: var(--texto-mutado);
+}
+
+/* ================= SEÇÃO VITRINE / PROJETOS ================= */
+.section-vitrine {
+    padding: 60px 0;
+}
+
+.grid-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Estilização da nova imagem do projeto */
+.projeto-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Faz a imagem cortar certinho sem distorcer ou esticar */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de zoom na imagem quando passar o mouse no card */
+.card-projeto:hover .projeto-img {
+    transform: scale(1.03);
+}
+
+
+/* Área do Placeholder da Imagem */
+.card-projeto .img-placeholder {
+    background: linear-gradient(135deg, #161f33, #0d1524);
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-projeto .img-placeholder i {
+    font-size: 3.5rem;
+    color: var(--cor-foco);
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.card-projeto:hover .img-placeholder i {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* Bloco de Conteúdo Interno */
+.card-conteudo {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-projeto h3 {
+    font-size: 1.2rem;
+    color: var(--texto-claro);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.card-projeto p {
+    font-size: 0.95rem;
+    color: var(--texto-mutado);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Garante que os botões fiquem alinhados se os textos forem de tamanhos diferentes */
+}
+
+/* Tags de Tecnologia */
+.projeto-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.projeto-tags span {
+    font-size: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.04);
+    color: var(--texto-mutado);
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    font-weight: 500;
+}
+
+/* Botão de Acesso */
+.card-projeto .btn-projeto {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: transparent;
+    color: var(--cor-foco);
+    border: 1px solid var(--cor-foco);
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    width: 100%;
+}
+
+.card-projeto .btn-projeto i {
+    font-size: 0.85rem;
+}
+
+.card-projeto .btn-projeto:hover {
+    background-color: var(--cor-foco);
+    color: #000;
+}
